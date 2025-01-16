@@ -1,0 +1,310 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&family=Roboto&display=swap');
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Calendar */
+.calendar-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid black;
+    order: 2;
+    transform: scale(1.2); /* Scale up */
+    transform-origin: top left;
+}
+
+/* Calendar Header */
+.calendar-header {
+    justify-content: space-between;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto';
+}
+
+.calendar-header #current-month {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.calendar-header button {
+    background: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    color: #8DB411;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+}
+
+.calendar-header button:hover {
+    background-color: #8DB411;
+    color: white;
+}
+
+.calendar-header .nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-header .nav-buttons button {
+    font-size: 1.5em;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+/* Day Names */
+.calendar-day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-grid div {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-grid div:hover {
+    background-color: #F0F0F0;
+}
+
+.calendar-grid div.today {
+    background-color: #8DB411;
+    color: white;
+    border-color: #8DB411;
+}
+
+.calendar-grid div.selected-range {
+    background-color: #DFF0D8;
+    border-color: #8DB411;
+}
+
+.calendar-grid div.selected {
+    background-color: #8DB411;
+    color: white;
+    border-color: #8DB411;
+}
+
+/*Other month styling*/
+.calendar-grid div.other-month {
+    color: #999;
+    background-color: #F9F9F9;
+    border: 1px dashed #E0E0E0;
+    cursor: default;
+}
+
+.calendar-grid div.other-month:hover {
+    background-color: #F9F9F9;
+    cursor: not-allowed;
+}
+
+/* Text Block Wrapper */
+.text-block-wrapper {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-block {
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+/* Activities */
+.activities-section {
+    padding: 200px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.activities-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #8DB411;
+    font-family: 'Swanky and Moo Moo', cursive;
+}
+
+#activities-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.activity-item, .select-date-range, .no-activities {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0; /* Square corner */
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1; /*Square */
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: scale(1.05);
+}
+
+.activity-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.activity-item:hover img {
+    opacity: 1; /* Show image on hover */
+}
+
+.activity-item .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #8DB411;
+    margin-bottom: 5px; 
+    text-align: left;
+}
+
+/* Date */
+.activity-item .date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #333; 
+    text-align: left;
+}
+
+/* Image Hidden */
+.activity-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    z-index: 1; 
+}
+
+.activity-item:hover img {
+    opacity: 1; /* Show image on hover */
+}
+
+/* Hide on hover */
+.activity-item:hover .title,
+.activity-item:hover .date {
+    opacity: 0; /* Hide text on hover */
+}
+
+.activity-item .title-date {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.activity-item:hover .title-date {
+    opacity: 0; /* Hide title and date on hover */
+}
+
+/* Placeholder Image */
+.activity-item img {
+    content: url('https://via.placeholder.com/250');
+}
+
+/* Date Range Box */
+.select-date-range {
+    border: 1px solid #000000; 
+    border-radius: 5px;
+    padding: 15px; 
+    text-align: center;
+    font-size: 1em; 
+    color: #333;
+    width: 100%; 
+    height: 100px; 
+    margin: 10px 0; 
+    transition: background-color 0.3s ease; 
+}
+
+.select-date-range:hover {
+    background-color: #E0E0E0;
+}
+
+
+/* Text Block*/
+.lorem-container {
+    border: 2px solid black;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.lorem-container h2 {
+    font-family: 'Swanky and Moo Moo', cursive;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px; 
+}
+
+.lorem-container p {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.4em; 
+    line-height: 1.6; 
+    text-align: justify; 
+    margin: 0; 
+}
+
+
+
