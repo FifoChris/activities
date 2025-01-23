@@ -1,5 +1,23 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&display=swap');
+
+
+/*Body*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
 
 /* Grid Container */
 .grid-container {
@@ -12,6 +30,65 @@
     font-family: 'Roboto', sans-serif;
 }
 
+nav {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(141, 180, 17);
+    height: auto;
+  }
+  
+  .logo {
+    width: 30%;
+    margin-right: 150px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .navbar-rechts{
+    width: 100%;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  ul li {
+    font-size: 18px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 70px;
+    list-style-type: none;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .logo h1{
+    font-size: 40px;
+    font-family: Moon 2.0, sans-serif;
+  }
+  
+  a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  li:hover{
+    transition: all 0,5s ease-in;
+    background-color: rgba(98, 106, 79, 0.7);
+    cursor: pointer;
+  }
+  
+  .logoimage{
+    margin-left: 5px;
+    height: auto;
+  }
+  
 /* Calendar */
 .calendar-section {
     background-color: white;
@@ -256,7 +333,7 @@
 
 /* Placeholder Image */
 .activity-item img {
-    content: url('https://via.placeholder.com/250');
+    content: url('/assets/250x250.png');
 }
 
 /* Date Range Box */
@@ -306,5 +383,75 @@
     margin: 0; 
 }
 
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #8DB411;
+    height: max-content;
+    z-index: 1;
+    gap: 20px;
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    margin: 0; /* Ensure no extra margin */
+}
 
+footer h1 {
+    font-family: 'Swanky and Moo Moo', cursive;
+    font-size: 1.8em; /* Adjust size if needed */
+    display: inline-block; /* Display headers next to each other */
+    margin-right: 20px; /* Add some spacing between headers */
+}
 
+footer p, footer a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em; /* Adjust size if needed */
+}
+
+.column1 {
+    padding: 20px; /* Add unit to padding */
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px; /* Add unit to font-size */
+    line-height: 1.8;
+}
+  
+  .column2 {
+    padding: 20;
+  }
+  
+  .column3 {
+    border-left: 1px solid black;
+    padding: 20;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22;
+    line-height: 1.8;
+  }
+  
+
+  
+  .image-container {
+    position: absolute;
+    bottom: 0; /* Align the container to the bottom of the footer */
+    right: 0;
+    text-align: center;
+    width: 100%; /* Ensure the container takes the full width if needed */
+}
+
+.flappie {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; /* Center the image if needed */
+
+}
+  .column4 {
+    position: relative;
+    padding-right: 0;
+  }
+  
+  .image-container {
+    position: absolute;
+    top: -223px;
+    right: 0;
+    text-align: center;
+  }
